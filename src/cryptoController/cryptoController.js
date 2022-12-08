@@ -22,8 +22,7 @@ getData = getData.sort((currency1, currency2) => {
         return { symbol, name, marketCapUsd, priceUsd }
          });
 await cryptoModel.deleteMany()
-await cryptoModel.create(getData)
-let finalData2 = await cryptoModel.find()
+let finalData2 = await cryptoModel.create(getData)
 return res.status(201).send({status: true, data: finalData2}) }
 catch (error) {
        return res.status(500).send({status: false, message: error.message })
