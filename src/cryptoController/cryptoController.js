@@ -18,8 +18,8 @@ const getCrypto = async function(req, res){
 let getData = data.data
 getData = getData.sort((currency1, currency2) => {
             return (currency1.changePercent24H - currency2.changePercent24Hr)
-        }).map((element) => { const { symbol, name, marketCapUsd, priceUsd, changePercent24Hr } = element
-        return { symbol, name, marketCapUsd, priceUsd, changePercent24Hr }
+        }).map((element) => { const { symbol, name, marketCapUsd, priceUsd } = element
+        return { symbol, name, marketCapUsd, priceUsd }
          });
 await cryptoModel.deleteMany()
 await cryptoModel.create(getData)
